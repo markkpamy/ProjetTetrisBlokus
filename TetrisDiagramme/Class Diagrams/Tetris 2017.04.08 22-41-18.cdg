@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Tetris">
+  <ClassDiagramComponents>
+    <Class name="NextTetriminoPanel" package="Model.Tetris" visibility="public" xPosition="93.0" yPosition="48.0">
+      <Fields>
+        <Field name="nextTetriminoPanel" type="boolean[][]" visibility="private"/>
+        <Field name="coordCasesGrille" type="Case[][]" visibility="private" isFinal="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="displayNextTetriminoOne" returnType="void" visibility="public">
+          <Argument type="Tetrimino" name="nextTetrimino"/>
+        </Method>
+        <Method name="displayNextTetriminoTwo" returnType="void" visibility="public">
+          <Argument type="Tetrimino" name="nextTetrimino"/>
+        </Method>
+        <Method name="displayNextTetriminoThree" returnType="void" visibility="public">
+          <Argument type="Tetrimino" name="nextTetrimino"/>
+        </Method>
+        <Method name="setGrilleCaseTrue" returnType="void" visibility="private">
+          <Argument type="int" name="i"/>
+          <Argument type="int" name="j"/>
+        </Method>
+        <Method name="setGrilleCaseFalse" returnType="void" visibility="private">
+          <Argument type="int" name="i"/>
+          <Argument type="int" name="j"/>
+        </Method>
+        <Method name="clear" returnType="void" visibility="private">
+          <Argument type="int" name="a"/>
+          <Argument type="int" name="b"/>
+          <Argument type="int" name="c"/>
+          <Argument type="int" name="d"/>
+        </Method>
+        <Method name="getCoordCasesGrille" returnType="Case[][]" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="PlateauTetris" package="Model.Tetris" visibility="public" xPosition="379.0" yPosition="128.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="nbLignes"/>
+          <Argument type="int" name="nbCols"/>
+          <Argument type="int" name="nBlignesGrille"/>
+          <Argument type="int" name="nBcolsGrille"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="creePiece" returnType="Tetrimino" visibility="public"/>
+        <Method name="gameOver" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="TetriminoI" package="Model.Tetris" visibility="public" xPosition="565.0" yPosition="48.0">
+      <Fields>
+        <Field name="TABTETRIMINO" type="boolean[][]" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="color" type="Couleur" visibility="public" isStatic="true" isFinal="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="TetriminoJ" package="Model.Tetris" visibility="public" xPosition="730.0" yPosition="48.0">
+      <Fields>
+        <Field name="TABTETRIMINO" type="boolean[][]" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="color" type="Couleur" visibility="public" isStatic="true" isFinal="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="TetriminoL" package="Model.Tetris" visibility="public" xPosition="1033.0" yPosition="221.0">
+      <Fields>
+        <Field name="TABTETRIMINO" type="boolean[][]" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="color" type="Couleur" visibility="public" isStatic="true" isFinal="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="TetriminoO" package="Model.Tetris" visibility="public" xPosition="896.0" yPosition="48.0">
+      <Fields>
+        <Field name="TABTETRIMINO" type="boolean[][]" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="color" type="Couleur" visibility="public" isStatic="true" isFinal="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="TetriminoS" package="Model.Tetris" visibility="public" xPosition="756.0" yPosition="221.0">
+      <Fields>
+        <Field name="TABTETRIMINO" type="boolean[][]" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="color" type="Couleur" visibility="public" isStatic="true" isFinal="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="TetriminoT" package="Model.Tetris" visibility="public" xPosition="936.0" yPosition="221.0">
+      <Fields>
+        <Field name="TABTETRIMINO" type="boolean[][]" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="color" type="Couleur" visibility="public" isStatic="true" isFinal="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="TetriminoZ" package="Model.Tetris" visibility="public" xPosition="515.0" yPosition="221.0">
+      <Fields>
+        <Field name="TABTETRIMINO" type="boolean[][]" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="color" type="Couleur" visibility="public" isStatic="true" isFinal="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="TetrisGameCore" package="Model.Tetris" visibility="public" xPosition="-39.0" yPosition="121.0">
+      <Fields>
+        <Field name="moveDownFinished" type="boolean" visibility="package" isStatic="true"/>
+        <Field name="gameOver" type="boolean" visibility="private" isStatic="true"/>
+        <Field name="launched" type="boolean" visibility="private" isStatic="true"/>
+        <Field name="paused" type="boolean" visibility="private" isStatic="true"/>
+        <Field name="nextPieces" type="Tetrimino[]" visibility="private" isStatic="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="jeu" returnType="void" visibility="public" isStatic="true">
+          <Argument type="PlateauTetris" name="plateau"/>
+          <Argument type="Tetrimino.Couleur[][]" name="rectPlateau"/>
+          <Argument type="Tetrimino.Couleur[][]" name="rectSuivant"/>
+          <Argument type="NextTetriminoPanel" name="nextTetriminoPanel"/>
+        </Method>
+        <Method name="setMoveDownFinished" returnType="void" visibility="private" isStatic="true">
+          <Argument type="boolean" name="par"/>
+        </Method>
+        <Method name="setGameOver" returnType="void" visibility="public" isStatic="true">
+          <Argument type="boolean" name="aGameOver"/>
+        </Method>
+        <Method name="copyRectPlateauColors" returnType="void" visibility="public" isStatic="true">
+          <Argument type="Tetrimino" name="t"/>
+          <Argument type="Tetrimino.Couleur[][]" name="rectPlateau"/>
+        </Method>
+        <Method name="copyRectSuivantColors" returnType="void" visibility="public" isStatic="true">
+          <Argument type="Tetrimino" name="t"/>
+          <Argument type="Tetrimino.Couleur[][]" name="rectSuivant"/>
+          <Argument type="int" name="numeroRect"/>
+        </Method>
+        <Method name="moveLeft" returnType="void" visibility="public" isStatic="true">
+          <Argument type="Plateau" name="plateau"/>
+          <Argument type="Tetrimino.Couleur[][]" name="couleursRectPlateau"/>
+        </Method>
+        <Method name="moveRight" returnType="void" visibility="public" isStatic="true">
+          <Argument type="Plateau" name="plateau"/>
+          <Argument type="Tetrimino.Couleur[][]" name="couleursRectPlateau"/>
+        </Method>
+        <Method name="rotate" returnType="void" visibility="public" isStatic="true">
+          <Argument type="Plateau" name="plateau"/>
+          <Argument type="Tetrimino.Couleur[][]" name="couleursRectPlateau"/>
+        </Method>
+        <Method name="moveDown" returnType="void" visibility="public" isStatic="true">
+          <Argument type="Plateau" name="plateau"/>
+          <Argument type="Tetrimino.Couleur[][]" name="couleursRectPlateau"/>
+        </Method>
+        <Method name="pauseGame" returnType="void" visibility="public" isStatic="true"/>
+        <Method name="continueGame" returnType="void" visibility="public" isStatic="true"/>
+      </Methods>
+    </Class>
+    <Class name="PlateauJeu" package="ViewController" visibility="public" xPosition="502.0" yPosition="353.0">
+      <Fields>
+        <Field name="isStarted" type="boolean" visibility="package"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="start" returnType="void" visibility="public">
+          <Argument type="Stage" name="primaryStage"/>
+        </Method>
+        <Method name="convertColor" returnType="Color" visibility="public">
+          <Argument type="Couleur" name="couleur"/>
+        </Method>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+        <Method name="setTimelineStop" returnType="void" visibility="private">
+          <Argument type="Timeline" name="t"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <UseRelation source="Model.Tetris.TetrisGameCore" target="Model.Tetris.PlateauTetris" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

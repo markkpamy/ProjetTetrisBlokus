@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Tetris">
+  <ClassDiagramComponents>
+    <Class name="Case" package="Model" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields>
+        <Field name="coord" type="Coordonnees" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Coordonnees" name="coord"/>
+        </Constructor>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getCoord" returnType="Coordonnees" visibility="public"/>
+        <Method name="setCoord" returnType="void" visibility="public">
+          <Argument type="Coordonnees" name="coord"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Coordonnees" package="Model" visibility="public" xPosition="320.0" yPosition="20.0">
+      <Fields>
+        <Field name="x" type="int" visibility="private"/>
+        <Field name="y" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="x"/>
+          <Argument type="int" name="y"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getX" returnType="int" visibility="public"/>
+        <Method name="setX" returnType="void" visibility="public">
+          <Argument type="int" name="x"/>
+        </Method>
+        <Method name="getY" returnType="int" visibility="public"/>
+        <Method name="setY" returnType="void" visibility="public">
+          <Argument type="int" name="j"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Plateau" package="Model" visibility="public" xPosition="620.0" yPosition="20.0">
+      <Fields>
+        <Field name="grille" type="boolean[][]" visibility="private"/>
+        <Field name="coordCasesGrille" type="Case[][]" visibility="private" isFinal="true"/>
+        <Field name="currentTetrimino" type="Tetrimino" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="creePiece" returnType="Tetrimino" visibility="public"/>
+        <Method name="displayPiece" returnType="void" visibility="public">
+          <Argument type="Tetrimino" name="t"/>
+        </Method>
+        <Method name="delFullLines" returnType="void" visibility="private"/>
+        <Method name="clearPlateau" returnType="void" visibility="public"/>
+        <Method name="setGrilleCaseTrue" returnType="void" visibility="private">
+          <Argument type="int" name="i"/>
+          <Argument type="int" name="j"/>
+        </Method>
+        <Method name="setGrilleCaseFalse" returnType="void" visibility="private">
+          <Argument type="int" name="i"/>
+          <Argument type="int" name="j"/>
+        </Method>
+        <Method name="effaceTracePiece" returnType="void" visibility="public">
+          <Argument type="Tetrimino" name="t"/>
+        </Method>
+        <Method name="getGrille" returnType="boolean[][]" visibility="public"/>
+        <Method name="setGrille" returnType="void" visibility="public">
+          <Argument type="boolean[][]" name="grille"/>
+        </Method>
+        <Method name="getCoordCasesGrille" returnType="Case[][]" visibility="public"/>
+        <Method name="getCurrentTetrimino" returnType="Tetrimino" visibility="public"/>
+        <Method name="setCurrentTetrimino" returnType="void" visibility="public">
+          <Argument type="Tetrimino" name="currentTetrimino"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Tetrimino" package="Model" visibility="public" xPosition="920.0" yPosition="20.0">
+      <Fields>
+        <Field name="idTetrimino" type="int" visibility="private" isFinal="true"/>
+        <Field name="nomTetrimino" type="String" visibility="private" isFinal="true"/>
+        <Field name="positionCourante" type="int" visibility="private"/>
+        <Field name="TABTETRIMINO" type="boolean[][]" visibility="private" isFinal="true"/>
+        <Field name="coordCaseTetriminos" type="Case[][]" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="idTetrimino"/>
+          <Argument type="String" name="nomTetrimino"/>
+          <Argument type="int" name="positionCourante"/>
+          <Argument type="boolean[][]" name="TABTETRIMINO"/>
+        </Constructor>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="copyTetri" returnType="void" visibility="public">
+          <Argument type="Tetrimino" name="t"/>
+        </Method>
+        <Method name="moveLeft" returnType="void" visibility="public">
+          <Argument type="Plateau" name="plateau"/>
+        </Method>
+        <Method name="moveRight" returnType="void" visibility="public">
+          <Argument type="Plateau" name="plateau"/>
+        </Method>
+        <Method name="moveDown" returnType="void" visibility="public">
+          <Argument type="Plateau" name="plateau"/>
+        </Method>
+        <Method name="accelerate" returnType="void" visibility="public"/>
+        <Method name="rotate" returnType="void" visibility="public">
+          <Argument type="Plateau" name="plateau"/>
+        </Method>
+        <Method name="verifMoveLeft" returnType="boolean" visibility="public">
+          <Argument type="Plateau" name="plateau"/>
+        </Method>
+        <Method name="verifMoveRight" returnType="boolean" visibility="public">
+          <Argument type="Plateau" name="plateau"/>
+        </Method>
+        <Method name="verifMoveDown" returnType="boolean" visibility="public">
+          <Argument type="Plateau" name="plateau"/>
+        </Method>
+        <Method name="verifRotate" returnType="boolean" visibility="public">
+          <Argument type="Plateau" name="plateau"/>
+        </Method>
+        <Method name="getIdTetrimino" returnType="int" visibility="public"/>
+        <Method name="getNomTetrimino" returnType="String" visibility="public"/>
+        <Method name="getPositionCourante" returnType="int" visibility="public"/>
+        <Method name="setPositionCourante" returnType="void" visibility="public">
+          <Argument type="int" name="positionCourante"/>
+        </Method>
+        <Method name="getTABTETRIMINO" returnType="boolean[][]" visibility="public"/>
+        <Method name="getCoordCaseTetriminos" returnType="Case[][]" visibility="public"/>
+        <Method name="setCoordCaseTetriminos" returnType="void" visibility="public">
+          <Argument type="Case[][]" name="coordCaseTetriminos"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="TetriminoI" package="Model" visibility="public" xPosition="1220.0" yPosition="20.0">
+      <Fields>
+        <Field name="TABTETRIMINO" type="boolean[][]" visibility="private" isStatic="true" isFinal="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="TetriminoJ" package="Model" visibility="public" xPosition="1520.0" yPosition="20.0">
+      <Fields>
+        <Field name="TABTETRIMINO" type="boolean[][]" visibility="private" isStatic="true" isFinal="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="TetriminoL" package="Model" visibility="public" xPosition="1820.0" yPosition="20.0">
+      <Fields>
+        <Field name="TABTETRIMINO" type="boolean[][]" visibility="private" isStatic="true" isFinal="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="TetriminoO" package="Model" visibility="public" xPosition="2120.0" yPosition="20.0">
+      <Fields>
+        <Field name="TABTETRIMINO" type="boolean[][]" visibility="private" isStatic="true" isFinal="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="TetriminoS" package="Model" visibility="public" xPosition="20.0" yPosition="420.0">
+      <Fields>
+        <Field name="TABTETRIMINO" type="boolean[][]" visibility="private" isStatic="true" isFinal="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="TetriminoT" package="Model" visibility="public" xPosition="320.0" yPosition="420.0">
+      <Fields>
+        <Field name="TABTETRIMINO" type="boolean[][]" visibility="private" isStatic="true" isFinal="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="TetriminoZ" package="Model" visibility="public" xPosition="620.0" yPosition="420.0">
+      <Fields>
+        <Field name="TABTETRIMINO" type="boolean[][]" visibility="private" isStatic="true" isFinal="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="PlateauJeu" package="ViewController" visibility="public" xPosition="920.0" yPosition="420.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="start" returnType="void" visibility="public">
+          <Argument type="Stage" name="primaryStage"/>
+        </Method>
+        <Method name="setBool" returnType="void" visibility="private">
+          <Argument type="boolean" name="t1"/>
+          <Argument type="boolean" name="t2"/>
+        </Method>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <UseRelation source="Model.Tetrimino" target="Model.Case" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="Model.TetriminoS" target="Model.Tetrimino"/>
+    <UseRelation source="Model.Tetrimino" target="Model.Plateau" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Model.Case" target="Model.Coordonnees" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="Model.TetriminoT" target="Model.Tetrimino"/>
+    <IsRelation name="is" source="Model.TetriminoI" target="Model.Tetrimino"/>
+    <HasRelation name="coord" source="Model.Case" target="Model.Coordonnees" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="Model.TetriminoZ" target="Model.Tetrimino"/>
+    <UseRelation source="Model.Plateau" target="Model.Case" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="Model.TetriminoL" target="Model.Tetrimino"/>
+    <UseRelation source="Model.Plateau" target="Model.Tetrimino" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Model.Tetrimino" target="Model.Tetrimino" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="currentTetrimino" source="Model.Plateau" target="Model.Tetrimino" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="Model.TetriminoO" target="Model.Tetrimino"/>
+    <IsRelation name="is" source="Model.TetriminoJ" target="Model.Tetrimino"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
